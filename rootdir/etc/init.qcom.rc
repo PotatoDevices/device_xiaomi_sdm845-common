@@ -1,3 +1,6 @@
+on early-init
+    mount none /system/etc/fstab.qcom /vendor/etc/fstab.qcom
+
 on init
     mount none /dev/null /vendor/bin/cnss_diag bind
     mount none /dev/null /vendor/bin/ipacm-diag bind

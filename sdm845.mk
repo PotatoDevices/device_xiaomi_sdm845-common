@@ -22,6 +22,10 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     fs_config_files
 
+# fstab
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:system/etc/fstab.qcom
+
 # Ambient Display
 PRODUCT_PACKAGES += \
     XiaomiDoze
