@@ -53,6 +53,10 @@
 #define CHECK_HANDLE(x) ((x) > 0)
 #define NUM_PERF_MODES 3
 
+const int kMaxInteractiveDuration = 5000; /* ms */
+const int kMinInteractiveDuration = 100; /* ms */
+const int kMinFlingDuration = 1500; /* ms */
+
 typedef enum {
     NORMAL_MODE = 0,
     SUSTAINED_MODE = 1,
@@ -204,7 +208,7 @@ static int process_interaction_hint(void* data) {
 
     struct timespec cur_boost_timespec;
     long long elapsed_time;
-    int duration = 100; // 100 ms by default
+    int duration = kMinInteractiveDuration;
 
     if (current_mode != NORMAL_MODE) {
         ALOGV("%s: ignoring due to other active perf hints", __func__);
@@ -214,7 +218,8 @@ static int process_interaction_hint(void* data) {
     if (data) {
         int input_duration = *((int*)data);
         if (input_duration > duration) {
-            duration = (input_duration > 5000) ? 5000 : input_duration;
+            duration = (input_duration > kMaxInteractiveDuration) ?
+                    kMaxInteractiveDuration : input_duration;
         }
     }
 
@@ -228,7 +233,7 @@ static int process_interaction_hint(void* data) {
     s_previous_boost_timespec = cur_boost_timespec;
     s_previous_duration = duration;
 
-    if (duration >= 1500) {
+    if (duration >= kMinFlingDuration) {
         perf_hint_enable_with_type(VENDOR_HINT_SCROLL_BOOST, -1, SCROLL_PREFILING);
     }
     perf_hint_enable_with_type(VENDOR_HINT_SCROLL_BOOST, duration, SCROLL_VERTICAL);
