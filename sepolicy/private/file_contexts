@@ -1,5 +1,2 @@
-# Fingerprint related nodes
-/sys/devices/platform/soc/soc:fingerprint_goodix/proximity_state       u:object_r:sysfs_fp_proximity:s0
-
 # Lights HAL
 /system/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_sdm845    u:object_r:hal_light_sdm845_exec:s0

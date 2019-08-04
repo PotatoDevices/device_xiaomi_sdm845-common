@@ -1,4 +1,3 @@
-type sysfs_fp_proximity, sysfs_type, fs_type;
 type sysfs_graphics, sysfs_type, fs_type;
 type sysfs_white_led, sysfs_type, fs_type;
 type sysfs_power_management, fs_type, sysfs_type;
