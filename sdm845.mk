@@ -305,9 +305,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service
 
-# WiFi Aware
-WIFI_HIDL_FEATURE_AWARE := true
-
 # WiFi Display
 PRODUCT_PACKAGES += \
     libnl
