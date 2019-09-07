@@ -49,6 +49,17 @@ if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
 
+function blob_fixup() {
+    case "${1}" in
+    vendor/lib/hw/audio.primary.sdm845.so)
+        patchelf --replace-needed "libcutils.so"  "libprocessgroup.so" "${2}"
+        ;;
+    vendor/lib64/hw/audio.primary.sdm845.so)
+        patchelf --replace-needed "libcutils.so"  "libprocessgroup.so" "${2}"
+        ;;
+    esac
+}
+
 # Initialize the helper for common device
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${POTATO_ROOT}" true "${CLEAN_VENDOR}"
 
