@@ -104,6 +104,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
+    libui_shim \
     vendor.qti.hardware.camera.device@1.0.vendor
 
 # Common init scripts
