@@ -58,8 +58,8 @@ PRODUCT_PACKAGES += \
     fs_config_files
 
 # Ambient Display
-PRODUCT_PACKAGES += \
-    XiaomiDoze
+#PRODUCT_PACKAGES += \
+#    XiaomiDoze
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -285,8 +285,8 @@ PRODUCT_PACKAGES += \
     thermal.sdm845
 
 # ThermalController app
-PRODUCT_PACKAGES += \
-    ThermalController
+#PRODUCT_PACKAGES += \
+#    ThermalController
 
 # USB
 PRODUCT_PACKAGES += \
