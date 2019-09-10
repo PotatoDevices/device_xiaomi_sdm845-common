@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+COMMON_PATH := device/xiaomi/sdm845-common
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -246,6 +248,9 @@ PRODUCT_PACKAGES += \
 # RenderScript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(COMMON_PATH)
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
