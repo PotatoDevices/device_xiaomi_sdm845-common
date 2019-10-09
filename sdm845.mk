@@ -194,13 +194,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     org.ifaa.android.manager
 
-# IMS
-PRODUCT_PACKAGES += \
-    ims-ext-common_system
-
-PRODUCT_BOOT_JARS += \
-    ims-ext-common_system
-
 # IPA
 PRODUCT_PACKAGES += \
     ipacm \
@@ -295,6 +288,7 @@ PRODUCT_PACKAGES += \
 
 # Telephony
 PRODUCT_PACKAGES += \
+    ims-ext-common \
     telephony-ext
 
 PRODUCT_BOOT_JARS += \
